@@ -1,0 +1,7 @@
+{
+  "name": "appcomnativo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button> </ion-back-button>
+        </ion-buttons>
+    <ion-title>lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [scrollEvents]="true"
+(ionScrollStart)="logScrollStart()"
+(ionScroll)="logScrolling($event)"
+(ionScrollEnd)="logScrollEnd()">
+  <ion-list>
+      <ion-button (click)="ScrollToBottom()">
+          Scroll To Bottom
+        </ion-button>
+       
+        
+    <ion-reorder-group (ionItemReorder)="onRenderItems($event)" disabled="false">
+ 
+      <ion-item *ngFor="let item of listItems">
+        <ion-label>
+          {{item}}
+        </ion-label>
+        <ion-reorder></ion-reorder>
+      </ion-item>
+ 
+    </ion-reorder-group>
+  </ion-list>
+  <ion-list text-center>
+    <ion-button (click)="getList()">
+      Get Updated List
+    </ion-button>
+  </ion-list>
+  
+     <!--<ion-button (click)="ScrollToPoint(-300, -120)">
+        Scroll To Point Right
+      </ion-button>-->
+    
+   
+    <ion-button (click)="ScrollToTop()">
+      Scroll To Top
+    </ion-button>
+  
+</ion-content>
